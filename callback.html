@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script>
+        function redirect() {
+            const queryString = window.location.search;
+            const appUrl = "pulseapp://auth/callback" + queryString;
+            window.location.href = appUrl;
+        }
+        window.onload = redirect;
+    </script>
+</head>
+<body>
+    <p>Redirecting to the Pulse app...</p>
+</body>
+</html>
