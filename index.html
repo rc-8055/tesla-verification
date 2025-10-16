@@ -1,1 +1,21 @@
-Verification site for Pulse app.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script>
+        function redirect() {
+            // Get the full query string from the current URL (e.g., "?code=...&state=...")
+            const queryString = window.location.search;
+            // Create the new URL with your app's custom scheme
+            const appUrl = "pulseapp://auth/callback" + queryString;
+            // Redirect to the app
+            window.location.href = appUrl;
+        }
+        // Run the redirect as soon as the page loads
+        window.onload = redirect;
+    </script>
+</head>
+<body>
+    <p>Redirecting to the Pulse app...</p>
+</body>
+</html>
