@@ -3,28 +3,23 @@
 <head>
   <meta charset="UTF-8"/>
   <title>Redirecting…</title>
-  <script>
-    function redirect() {
-      const qs = window.location.search;                              // “?code=…&state=…”
-      
-      // 1) Try the intent:// fallback for Android
-      const intentUri =
-        'intent://auth/callback' + qs +
-        '#Intent;scheme=pulseapp;package=com.example.pulse;end';
-      
-      // 2) As a normal fallback, the custom‐scheme URI
-      const customUri = 'pulseapp://auth/callback' + qs;
-      
-      // Attempt the intent:// first
-      window.location.replace(intentUri);
-      
-      // After a short delay, try the custom scheme if the intent fails
-      setTimeout(() => {
-        window.location.replace(customUri);
-      }, 500);
-    }
-    window.onload = redirect;
-  </script>
+<script>
+  function redirect() {
+    const qs = window.location.search;
+    // Replace com.example.pulse with your real packageId
+    const intentUri =
+      'intent://auth/callback' + qs +
+      '#Intent;scheme=pulseapp;package=io.rc8055.pulse;end';
+    const customUri = 'pulseapp://auth/callback' + qs;
+
+    window.location.replace(intentUri);
+    setTimeout(() => {
+      window.location.replace(customUri);
+    }, 500);
+  }
+  window.onload = redirect;
+</script>
+
 </head>
 <body>
   <p style="text-align:center;margin-top:50vh;font-family:sans-serif;">
