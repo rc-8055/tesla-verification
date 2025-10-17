@@ -7,9 +7,10 @@
   function redirect() {
     const qs = window.location.search;
     // Replace com.example.pulse with your real packageId
-    const intentUri =
-      'intent://auth/callback' + qs +
-      '#Intent;scheme=pulseapp;package=io.rc8055.pulse;end';
+const intentUri =
+  'intent://auth/callback' + qs +
+  '#Intent;scheme=pulseapp;package=io.rc8055.pulse;end';
+
     const customUri = 'pulseapp://auth/callback' + qs;
 
     window.location.replace(intentUri);
